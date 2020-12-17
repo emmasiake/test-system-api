@@ -1,16 +1,10 @@
 var assert = require('chai').assert;
-function sum_in_interval(a, b) {
-var sum = 0;
-for (var i = a; i <= b; i++) {
-sum += i;
-}
-return sum;
-}
+function sum(a, b) {return (a+b)}
 describe('myFunction()', function() {
-var tests = [{args: [5, 6], expected: 11},{args: [5, 8], expected: 26},{args: [1, 100], expected: 5050},{args: [-1, 1], expected: 0},];
+var tests = [{args: [2, 5], expected: 7},{args: [4, 6], expected: 10},{args: [8, 4], expected: 12},{args: [9, 9], expected: 18},];
 tests.forEach(function(test) {
         it('correctly adds ' + test.args.length + ' args', function() {
-            var res = sum_in_interval.apply(null, test.args);
+            var res = sum.apply(null, test.args);
             assert.equal(res, test.expected);
         });
     });});
